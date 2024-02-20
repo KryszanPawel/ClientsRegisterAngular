@@ -1,0 +1,16 @@
+{
+  "users": {
+    "id": 1,
+    "email": "json-server",
+    "password": "supersecretpassword",
+    "username": "test123456"
+  },
+  "clients": {
+    "id": 1,
+    "firstname": "Test",
+    "surename": "Testowy",
+    "email": "test@gmail.com",
+    "address": "Miasto ul: Testowa 12",
+    "postcode": "11-111"
+  }
+}
