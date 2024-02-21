@@ -11,11 +11,22 @@
           matInput
           name="username"
           ngModel
-          #first="ngModel"
+          #firstname="ngModel"
           [(ngModel)]="userData.username"
         />
       </mat-form-field>
     </div>
+    <ng-container
+      *ngIf="
+        form.controls['username']?.invalid &&
+        form.controls['username']?.touched &&
+        form.controls['username']?.dirty
+      "
+    >
+      <app-alert
+        [text]="'Ta kontrolka musi mieć od 4 do 30 znaków'"
+      ></app-alert>
+    </ng-container>
     <div>
       <mat-form-field>
         <mat-label>Hasło</mat-label>
@@ -25,7 +36,7 @@
           [type]="hide ? 'password' : 'text'"
           name="password"
           ngModel
-          #first="ngModel"
+          #password="ngModel"
           [(ngModel)]="userData.userPassword"
         />
         <button
@@ -39,10 +50,29 @@
         </button>
       </mat-form-field>
     </div>
+    <ng-container
+      *ngIf="
+        form.controls['password']?.invalid &&
+        (form.controls['password']?.touched || form.controls['password']?.dirty)
+      "
+    >
+      <app-alert [text]="'Ta kontrolka nie może być pusta'"></app-alert>
+    </ng-container>
     <div class="d-flex justify-content-end">
-      <button [disabled]="false" mat-raised-button color="primary">
+      <button
+        [disabled]="form.invalid"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
         Zaloguj się
       </button>
     </div>
+    <div>
+      <p class="text-center">
+        Nie masz konta? <a routerLink="/rejestracja">Zarejestruj się</a>
+      </p>
+    </div>
+    <app-alert *ngIf="errorMessage" [text]="errorMessage"></app-alert>
   </form>
 </div>
