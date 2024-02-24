@@ -5,6 +5,18 @@
       "email": "json-server",
       "password": "123",
       "username": "test"
+    },
+    {
+      "email": "pawel@gmail.com",
+      "username": "pawel",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "email": "pawel1@gmail.com",
+      "username": "pawel1",
+      "password": "password",
+      "id": 3
     }
   ],
   "clients": [

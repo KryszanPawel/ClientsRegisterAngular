@@ -20,6 +20,10 @@ export interface GetUserResponse {
   //   };
 }
 
+export type PostUserResponse = GetUserResponse;
+
+export type PostUser = Omit<GetUserResponse, 'id'>;
+
 export class User {
   constructor(
     public email: string,
