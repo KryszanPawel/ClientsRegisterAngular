@@ -34,7 +34,13 @@
       <ng-container matColumnDef="buttons">
         <th mat-header-cell *matHeaderCellDef>Akcje</th>
         <td mat-cell *matCellDef="let row">
-          <button mat-raised-button color="primary">Szczegóły</button>
+          <button
+            mat-raised-button
+            color="primary"
+            routerLink="/klienci/{{ row.id }}"
+          >
+            Szczegóły
+          </button>
         </td>
       </ng-container>
 

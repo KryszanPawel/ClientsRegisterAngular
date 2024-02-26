@@ -14,9 +14,10 @@ import {
 })
 export class ClientsService {
   apiUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) {}
 
-  getClients(
+  public getClients(
     pageIndex: number,
     itemsPerPage: number,
     sortDiretcion: string,
@@ -60,7 +61,25 @@ export class ClientsService {
       );
   }
 
-  postClient(clientData: PostClient): Observable<Client> {
+  public getClient(id: number): Observable<Client> {
+    return this.http
+      .get<ClientResponse>(`${this.apiUrl}/clients/${id}`)
+      .pipe(
+        map(
+          (clientResponse) =>
+            new Client(
+              clientResponse.id,
+              clientResponse.firstname,
+              clientResponse.surename,
+              clientResponse.email,
+              clientResponse.address,
+              clientResponse.postcode,
+            ),
+        ),
+      );
+  }
+
+  public postClient(clientData: PostClient): Observable<Client> {
     return this.http
       .post<ClientResponse>(this.apiUrl + '/clients', clientData)
       .pipe(

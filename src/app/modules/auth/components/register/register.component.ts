@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PostUser } from 'src/app/modules/core/models/user.model';
 import { AuthService } from 'src/app/modules/core/services/auth.service';
+import { FormsService } from 'src/app/modules/core/services/forms.service';
 
 @Component({
   selector: 'app-register',
@@ -44,6 +45,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private formsService: FormsService,
   ) {}
 
   get controls() {
@@ -82,18 +84,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   getErrorMessage(control: FormControl) {
-    if (control.hasError('required')) {
-      return 'Wartość nie może byc pusta';
-    }
-    if (control.hasError('minlength')) {
-      return 'Wartość jest zbyt krótka';
-    }
-    if (control.hasError('maxlength')) {
-      return 'Wartość jest zbyt długa';
-    }
-
-    return control.hasError('email')
-      ? 'Nieprawidłowy adres email: example@example.com'
-      : '';
+    return this.formsService.getErrorMessage(control);
   }
 }

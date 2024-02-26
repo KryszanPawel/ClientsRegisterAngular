@@ -4,7 +4,10 @@
     <span class="spacer"></span>
     <button routerLink="/" mat-button>Strona główna</button>
     <button routerLink="/logowanie" mat-button *ngIf="!user">Logowanie</button>
-    <button routerLink="/klienci" mat-button>Klienci</button>
+    <button routerLink="/klienci" mat-button *ngIf="user">Klienci</button>
+    <button routerLink="/klienci/dodaj" mat-button *ngIf="user">
+      Dodaj Klienta
+    </button>
     <button (click)="logout()" mat-button *ngIf="user">Wyloguj się</button>
   </mat-toolbar>
 </nav>

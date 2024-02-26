@@ -43,6 +43,14 @@
       "email": "test3@gmail.com",
       "address": "Miasto ul: Testowa 12",
       "postcode": "11-111"
+    },
+    {
+      "firstname": "Paweł",
+      "surename": "Andrzej",
+      "email": "adrzejpawel@gmail.com",
+      "address": "Wrocław Krzycka 12",
+      "postcode": "53-112",
+      "id": 4
     }
   ]
 }
