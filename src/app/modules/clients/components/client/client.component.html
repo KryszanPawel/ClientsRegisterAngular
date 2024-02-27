@@ -1,5 +1,15 @@
-<div>
-  <p>Dane clienta</p>
+<div *ngIf="client">
+  <div>
+    <p>Usuń klienta:</p>
+    <button mat-raised-button color="warn" (click)="openDialog()">Usuń</button>
+  </div>
+  <div class="mt-4">
+    <p>Edytuj klienta</p>
+    <button mat-raised-button color="primary" (click)="openEditDialog()">
+      Edytuj
+    </button>
+  </div>
+  <p class="mt-4">Dane clienta</p>
   <p>{{ client.firstname }} {{ client.surename }}</p>
   <p>Adres email: {{ client.email }}</p>
   <p>adres zamieszkania: {{ client.postcode }} {{ client.address }}</p>

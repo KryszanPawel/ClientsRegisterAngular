@@ -21,28 +21,20 @@
   ],
   "clients": [
     {
-      "id": 1,
       "firstname": "Test",
       "surename": "Testowy",
       "email": "test@gmail.com",
       "address": "Miasto ul: Testowa 12",
-      "postcode": "11-111"
+      "postcode": "11-111",
+      "id": 1
     },
     {
-      "id": 2,
-      "firstname": "Test2",
-      "surename": "Testowy",
-      "email": "test2@gmail.com",
-      "address": "Miasto ul: Testowa 12",
-      "postcode": "11-111"
-    },
-    {
-      "id": 3,
-      "firstname": "Test3",
-      "surename": "Testowy",
+      "firstname": "Test12",
+      "surename": "Testowy11",
       "email": "test3@gmail.com",
       "address": "Miasto ul: Testowa 12",
-      "postcode": "11-111"
+      "postcode": "11-111",
+      "id": 3
     },
     {
       "firstname": "Paweł",
@@ -51,6 +43,14 @@
       "address": "Wrocław Krzycka 12",
       "postcode": "53-112",
       "id": 4
+    },
+    {
+      "firstname": "Grzegorz",
+      "surename": "Nazwisko",
+      "email": "Super@adre.com",
+      "address": "Jakaś ulica",
+      "postcode": "12-123",
+      "id": 5
     }
   ]
 }

@@ -17,6 +17,9 @@ export class FormsService {
     if (control.hasError('maxlength')) {
       return 'Wartość jest zbyt długa';
     }
+    if (control.hasError('invalidPostcode')) {
+      return 'Kod pocztowy powinien być w formacie XX-XXX';
+    }
     return control.hasError('email')
       ? 'Nieprawidłowy adres email: example@example.com'
       : '';

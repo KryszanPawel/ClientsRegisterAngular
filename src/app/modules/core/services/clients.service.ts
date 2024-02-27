@@ -96,4 +96,28 @@ export class ClientsService {
         ),
       );
   }
+
+  public deleteClient(id: number): Observable<Record<string, never>> {
+    return this.http.delete<Record<string, never>>(
+      `${this.apiUrl}/clients/${id}`,
+    );
+  }
+
+  public putClient(clientData: PostClient, id: number): Observable<Client> {
+    return this.http
+      .put<ClientResponse>(this.apiUrl + `/clients/${id}`, clientData)
+      .pipe(
+        map(
+          (clientResponse) =>
+            new Client(
+              clientResponse.id,
+              clientResponse.firstname,
+              clientResponse.surename,
+              clientResponse.email,
+              clientResponse.address,
+              clientResponse.postcode,
+            ),
+        ),
+      );
+  }
 }
