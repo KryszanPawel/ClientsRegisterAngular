@@ -18,6 +18,6 @@ import { EditClientDialogComponent } from './components/client/edit-client-dialo
     EditClientDialogComponent,
   ],
   imports: [SharedModule, ClientRoutingModule],
-  exports: [ClientsComponent],
+  exports: [],
 })
 export class ClientsModule {}

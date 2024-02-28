@@ -1,4 +1,3 @@
-import { PrefixNot } from '@angular/compiler';
 import { Component, OnDestroy } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -24,7 +23,9 @@ export class PhoneControlComponent implements ControlValueAccessor, OnDestroy {
   numberControl = new FormControl('');
   sub = new Subscription();
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = (value: string | null) => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouch = () => {};
 
   constructor() {
