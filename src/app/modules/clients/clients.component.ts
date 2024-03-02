@@ -5,4 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
 })
-export class ClientsComponent {}
+export class ClientsComponent {
+  // constructor(private activatedRout: ActivatedRoute) {}
+  // ngOnInit(): void {
+  //   this.activatedRout.data.subscribe({
+  //     next: (data) => {
+  //       console.log(data);
+  //     },
+  //   });
+  // }
+}

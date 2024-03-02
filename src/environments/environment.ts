@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'superserver.pl',
+  apiUrl: 'http://localhost:3000',
 };

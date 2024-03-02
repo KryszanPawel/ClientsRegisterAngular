@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authMatchGuard } from './modules/core/guards/auth-match.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'klienci',
     loadChildren: () =>
       import('./modules/clients/clients.module').then((m) => m.ClientsModule),
+    canMatch: [authMatchGuard],
   },
 ];
 
